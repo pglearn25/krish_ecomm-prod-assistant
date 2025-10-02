@@ -6,7 +6,7 @@ async def main():
         "hybrid_search": {   # server name
             "command": "python",
             "args": [
-                r"/Users/priya/Learn/LLMops/projects/clones/ecomm/ecomm-prod-assistant/prod_assistant/mcp_servers/product_search_server.py"
+                r"/Users/priya/Learn/LLMops/projects/my_deploymnets/krish_ecomm-prod-assistant/prod_assistant/mcp_servers/product_search_server.py"
             ],  # absolute path
             "transport": "stdio",
         }
@@ -23,7 +23,7 @@ async def main():
     # --- Step 1: Try retriever first ---
     #query = "Samsung Galaxy S25 price"
     # query = "iPhone 15"
-    query = "iPhone 19 new features?"
+    query = "iPhone 17 new features?"
     retriever_result = await retriever_tool.ainvoke({"query": query})
     print("\nRetriever Result:\n", retriever_result)
 
