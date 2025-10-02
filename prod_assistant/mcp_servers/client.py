@@ -6,7 +6,7 @@ async def main():
         "hybrid_search": {   # server name
             "command": "python",
             "args": [
-                r"/Users/priya/Learn/LLMops/projects/my_deploymnets/krish_ecomm-prod-assistant/prod_assistant/mcp_servers/product_search_server.py"
+                r"/Users/priya/Learn/LLMops/projects/my_deployments/ecomm_prod_assistant/prod_assistant/mcp_servers/product_search_server.py"
             ],  # absolute path
             "transport": "stdio",
         }
