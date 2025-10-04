@@ -7,7 +7,7 @@ Parameters:
     Default: product-assistant-cluster-latest
   NodeInstanceType:
     Type: String
-    Default: t2.micro
+    Default: c7i-flex.large
   DesiredCapacity:
     Type: Number
     Default: 2
