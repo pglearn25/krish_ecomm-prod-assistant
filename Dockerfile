@@ -14,6 +14,6 @@ COPY . .
 
 EXPOSE 8000
 
-# run uvicorn properly on 0.0.0.0:8000
+# run uvicorn properly on 0.0.0.0:8000 -->8001
 #CMD ["bash", "-c", "python prod_assistant/mcp_servers/product_search_server.py & uvicorn prod_assistant.router.main:app --host 0.0.0.0 --port 8000 --workers 2"]
 CMD ["sh", "-c", "python prod_assistant/mcp_servers/product_search_server.py --port 8001 & exec uvicorn prod_assistant.router.main:app --host 0.0.0.0 --port 8000 --workers 2"]
