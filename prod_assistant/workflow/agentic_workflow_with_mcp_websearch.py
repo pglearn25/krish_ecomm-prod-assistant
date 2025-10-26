@@ -181,8 +181,22 @@ class AgenticRAG:
         )
         return result["messages"][-1].content
 
+# # ---------- Standalone Test ----------
+# if __name__ == "__main__":
+#     rag_agent = AgenticRAG()
+#     answer = rag_agent.run("What is the price of iPhone 176?")
+#     print("\nFinal Answer:\n", answer)
+
 # ---------- Standalone Test ----------
 if __name__ == "__main__":
     rag_agent = AgenticRAG()
-    answer = rag_agent.run("What is the price of iPhone 16?")
-    print("\nFinal Answer:\n", answer)
+    
+    # 1. Define an async main function to run the coroutine
+    async def run_agent():
+        query = "What is the price of iPhone 16?"
+        # 2. Use 'await' to execute the asynchronous function
+        answer = await rag_agent.run(query) 
+        print("\nFinal Answer:\n", answer)
+
+    # 3. Use asyncio.run() to start the event loop and run the async function
+    asyncio.run(run_agent())

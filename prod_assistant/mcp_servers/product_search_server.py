@@ -1,3 +1,9 @@
+import os
+from dotenv import load_dotenv
+print("{Importing modules in product_search_server.py {os.path.join(os.getcwd(), '.env')}")
+# Explicitly load the .env file from the current directory
+load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
+
 from mcp.server.fastmcp import FastMCP
 from retriever.retrieval import Retriever  
 from langchain_community.tools import DuckDuckGoSearchRun
@@ -51,6 +57,7 @@ async def web_search(query: str) -> str:
         return f"Error during web search: {str(e)}"
 
 # ---------- Run Server ----------
+# NOTE - to check locally firstrun server file with mcp.run(transport="stdio") and same stdio on client side
 if __name__ == "__main__":
     #mcp.run(transport="stdio")
     mcp.run(transport="streamable-http")
